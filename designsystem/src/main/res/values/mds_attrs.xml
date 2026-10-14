@@ -93,6 +93,18 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="MdsScreenTemplate">
+        <attr name="mdsTemplateTitle" format="string" />
+        <attr name="mdsTemplateSubtitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsScreenTemplate_Layout">
+        <attr name="layout_mdsTemplateSlot" format="enum">
+            <enum name="content" value="0" />
+            <enum name="footer" value="1" />
+        </attr>
+    </declare-styleable>
+
     <declare-styleable name="MdsBadge">
         <attr name="mdsTone" />
     </declare-styleable>

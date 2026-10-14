@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The layout of a whole screen with the content taken out: where the header, the body and the actions go, and how they are spaced."
+        android:textAppearance="@style/Mds.TextAppearance.Body" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Screen template" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="MdsScreenTemplate with placeholders in every region. Open a page below to see it filled in."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <io.github.liconrepo.mds.templates.MdsScreenTemplate
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            app:mdsTemplateSubtitle="Subtitle explains the page in one line."
+            app:mdsTemplateTitle="Page title">
+
+                <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="@dimen/mds_space_md" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="@dimen/mds_space_md" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_mdsTemplateSlot="footer" />
+        </io.github.liconrepo.mds.templates.MdsScreenTemplate>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+</LinearLayout>

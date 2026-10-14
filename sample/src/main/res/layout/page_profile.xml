@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.liconrepo.mds.templates.MdsScreenTemplate xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:mdsTemplateSubtitle="Your account at a glance."
+    app:mdsTemplateTitle="Profile"
+    tools:ignore="HardcodedText">
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <io.github.liconrepo.mds.functional.atoms.MdsAvatar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:mdsAvatarName="Dorothy Vaughan"
+                app:mdsAvatarSize="xlarge" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mds_space_lg"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dorothy Vaughan"
+                    android:textAppearance="@style/Mds.TextAppearance.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dorothy@example.com"
+                    android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsBadge
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mds_space_sm"
+                    android:text="Pro plan"
+                    app:mdsTone="brand" />
+            </LinearLayout>
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_lg"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_info"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Next invoice on the 1st"
+                app:mdsListItemTitle="Billing" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_check"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Two-step sign-in is on"
+                app:mdsListItemTitle="Security" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_success"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Email and push"
+                app:mdsListItemTitle="Notifications" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <io.github.liconrepo.mds.functional.atoms.MdsButton
+        android:id="@+id/btnSignOut"
+        style="@style/Mds.Widget.Button.Outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign out"
+        app:layout_mdsTemplateSlot="footer" />
+</io.github.liconrepo.mds.templates.MdsScreenTemplate>

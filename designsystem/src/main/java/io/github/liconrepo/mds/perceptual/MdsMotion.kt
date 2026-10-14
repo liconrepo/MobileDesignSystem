@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.perceptual
 
 import android.content.Context
 import android.provider.Settings

@@ -1,3 +1,8 @@
+---
+title: Theming
+nav_order: 4
+---
+
 # Theming
 
 ## Light and dark

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atoms combined into one small unit with a single purpose: a label with an input and a hint, an icon with a message."
+        android:textAppearance="@style/Mds.TextAppearance.Body" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Text fields" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="A label, an input, helper text and an error, working as one. Errors use an icon and text, not just colour."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <io.github.liconrepo.mds.functional.molecules.MdsTextField
+                android:id="@+id/fieldEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="you@example.com"
+                android:inputType="textEmailAddress"
+                app:mdsHelperText="We only use this to send receipts."
+                app:mdsLabel="Email" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsTextField
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_lg"
+                android:enabled="false"
+                android:text="Read only value"
+                app:mdsLabel="Workspace" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                android:id="@+id/btnValidate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_lg"
+                android:text="Validate email"
+                app:mdsButtonVariant="secondary" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Alerts" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Icon, title, message and dismiss in one unit. Tone carries meaning, and each tone has its own icon."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsAlert
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mdsAlertMessage="Your trial ends in 3 days."
+        app:mdsAlertTitle="Heads up"
+        app:mdsTone="info" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsAlert
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_md"
+        app:mdsAlertMessage="Your changes were saved."
+        app:mdsAlertTitle="All good"
+        app:mdsTone="success" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsAlert
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_md"
+        app:mdsAlertMessage="Storage is almost full."
+        app:mdsAlertTitle="Check this"
+        app:mdsTone="warning" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsAlert
+        android:id="@+id/alertDanger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_md"
+        app:mdsAlertDismissible="true"
+        app:mdsAlertMessage="We could not reach the server. You can dismiss this."
+        app:mdsAlertTitle="Connection lost"
+        app:mdsTone="danger" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="List items" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Icon, two lines of text and a chevron, built as one tappable row."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:id="@+id/listTokens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_info"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Primitive, semantic and component tiers"
+                app:mdsListItemTitle="Design tokens" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_success"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Contrast checked in light and dark"
+                app:mdsListItemTitle="Accessibility" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_check"
+                app:mdsListItemSubtitle="Plain Views, plain Kotlin"
+                app:mdsListItemTitle="View-based" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+</LinearLayout>

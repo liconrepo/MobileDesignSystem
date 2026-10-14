@@ -1,8 +1,10 @@
 # Mobile Design System
 
-A small, opinionated, **View-based** design system for Android, written in Kotlin. **No Jetpack Compose.**
+A small, opinionated, **View-based** design system for Android, written in Kotlin, with no Jetpack Compose dependency.
 It is meant to be read, copied and adapted: a reference for how a company can structure tokens, themes and
 components so that a brand change, a dark mode and an accessibility fix are each a one-place change.
+
+**Docs and guides: https://liconrepo.github.io/MobileDesignSystem/**
 
 <p align="center">
   <img src="docs/images/light-1.png" width="23%" alt="Light theme" />
@@ -28,7 +30,7 @@ Most design-system write-ups show finished UI and hide the decisions. This repo 
 | --- | --- |
 | [`designsystem`](designsystem) | The library: tokens (`res/values`), themes, and components (`MdsButton`, `MdsTextField`, ...). |
 | [`sample`](sample) | A gallery app that uses the library exactly the way a consumer would. |
-| [`docs`](docs) | Principles, token reference, theming guide, component guidelines, contributor checklist. |
+| [`docs`](docs) | Principles, token reference, theming guide, component guidelines, contributor checklist. Also published as a [website](https://liconrepo.github.io/MobileDesignSystem/). |
 
 ### Components
 
@@ -53,16 +55,16 @@ Add the dependency (see [Publishing](#publishing)), then make your app theme ext
 <style name="Theme.MyApp" parent="Theme.Mds" />
 ```
 
-Use the components in layouts:
+Use the components in layouts (see the [package map](#package-map) for where each one lives):
 
 ```xml
-<io.github.liconrepo.mds.MdsButton
+<io.github.liconrepo.mds.functional.atoms.MdsButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Continue"
     app:mdsButtonVariant="primary" />
 
-<io.github.liconrepo.mds.MdsTextField
+<io.github.liconrepo.mds.functional.molecules.MdsTextField
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:mdsLabel="Email"
@@ -87,6 +89,26 @@ override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 }
 ```
+
+## Package map
+
+The library is organised by the kind of pattern, following the functional/perceptual split in Kholmatova's
+*Design Systems* and the atoms, molecules and organisms layering from Brad Frost's Atomic Design.
+
+```
+io.github.liconrepo.mds
+  perceptual/               how it looks and feels: MdsTone, MdsMotion, theme helpers (mdsColor, mdsPx)
+  functional/
+    atoms/                  MdsButton, MdsBadge, MdsChip, MdsAvatar, MdsSkeleton
+    molecules/              MdsTextField, MdsAlert, MdsListItem
+    organisms/              MdsCard
+  templates/                MdsScreenTemplate: header, scrolling content and pinned footer, with no content
+```
+
+Pages are the last stage. A page is a template filled with real content, so it belongs to the app, not the
+library. The sample has two (`SignInPage`, `ProfilePage` in `sample/.../pages`), opened from the gallery.
+
+The sample app has one tab per layer (Perceptual, Atoms, Molecules, Organisms, Templates, Pages), in the same order.
 
 ## Architecture in one picture
 
@@ -133,14 +155,22 @@ To distribute publicly, push a version tag and use [JitPack](https://jitpack.io)
 
 ## Credits and inspiration
 
-The structure borrows *ideas* (never code or assets) from public design systems and writing, including
-Material Design, IBM Carbon, Shopify Polaris, GitHub Primer, Atlassian Design System, Microsoft Fluent and
-Airbnb's public design-language writing, and from Alla Kholmatova's book *Design Systems*
-(Smashing Magazine, 2017), notably its split between functional and perceptual patterns, its emphasis on
-shared vocabulary and its principles-first approach. Colours, icons and code here are original.
+The structure borrows *ideas* (never code or assets) from public design systems and writing:
 
-This project is independent and is not affiliated with, or endorsed by, any of those organisations
-or by any employer of its contributors.
+- [Material Design](https://m3.material.io)
+- [IBM Carbon](https://carbondesignsystem.com)
+- [Shopify Polaris](https://polaris.shopify.com)
+- [GitHub Primer](https://primer.style)
+- [Atlassian Design System](https://atlassian.design)
+- [Microsoft Fluent](https://fluent2.microsoft.design)
+- Airbnb's public design-language writing, such as [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
+- Brad Frost's [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/), the source of the atoms,
+  molecules and organisms layering (see also the [book](https://atomicdesign.bradfrost.com))
+- Alla Kholmatova's book [*Design Systems*](https://www.smashingmagazine.com/design-systems-book/)
+  (Smashing Magazine, 2017), notably its split between functional and perceptual patterns, its emphasis on
+  shared vocabulary and its principles-first approach
+
+Colours, icons and code here are original.
 
 ## License
 

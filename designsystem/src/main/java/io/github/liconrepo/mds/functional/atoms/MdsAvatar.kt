@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,6 +9,9 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.withStyledAttributes
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.MdsTone
+import io.github.liconrepo.mds.perceptual.dp
 
 /** A person or entity, shown as an image or, failing that, as coloured initials. */
 public class MdsAvatar @JvmOverloads constructor(

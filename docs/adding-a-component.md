@@ -1,7 +1,15 @@
+---
+title: Adding a component
+nav_order: 6
+---
+
 # Adding a component
 
 1. **Justify it.** Two real call sites, and no existing component can do it with a new variant.
-2. **Name it** `Mds<Thing>`, in `designsystem/src/main/java/io/github/liconrepo/mds`.
+2. **Name it** `Mds<Thing>`, in `designsystem/src/main/java/io/github/liconrepo/mds/functional/<layer>`, where `<layer>` is `atoms` (stands alone),
+   `molecules` (atoms working as one unit) or `organisms` (a distinct section built from both). Whole-screen
+   layouts with no content go in `templates`. Tokens and other look-and-feel code go in `perceptual`. Pages are
+   app code, not library code.
 3. **Attributes**: add a `declare-styleable`, a `mds<Thing>Style` theme attribute and a `Mds.Widget.<Thing>` default style.
 4. **Constructor**: `@JvmOverloads constructor(context, attrs, defStyleAttr = R.attr.mds<Thing>Style)`.
 5. **Colours only through roles** (`context.mdsColor(R.attr...)`). No hex values, no `R.color.mds_palette_*`.

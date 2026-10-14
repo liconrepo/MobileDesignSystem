@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.liconrepo.mds.templates.MdsScreenTemplate xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:mdsTemplateSubtitle="Sign in to pick up where you left off."
+    app:mdsTemplateTitle="Welcome back"
+    tools:ignore="HardcodedText">
+
+    <io.github.liconrepo.mds.functional.molecules.MdsAlert
+        android:id="@+id/alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mdsAlertMessage="This is a demo. Nothing is sent anywhere."
+        app:mdsAlertTitle="Heads up"
+        app:mdsTone="info" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsTextField
+        android:id="@+id/fieldEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:hint="you@example.com"
+        android:inputType="textEmailAddress"
+        app:mdsLabel="Email" />
+
+    <io.github.liconrepo.mds.functional.molecules.MdsTextField
+        android:id="@+id/fieldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_lg"
+        android:inputType="textPassword"
+        app:mdsHelperText="At least 8 characters."
+        app:mdsLabel="Password" />
+
+    <io.github.liconrepo.mds.functional.atoms.MdsButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        app:layout_mdsTemplateSlot="footer" />
+
+    <io.github.liconrepo.mds.functional.atoms.MdsButton
+        android:id="@+id/btnCreateAccount"
+        style="@style/Mds.Widget.Button.Ghost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_sm"
+        android:text="Back to gallery"
+        app:layout_mdsTemplateSlot="footer" />
+</io.github.liconrepo.mds.templates.MdsScreenTemplate>

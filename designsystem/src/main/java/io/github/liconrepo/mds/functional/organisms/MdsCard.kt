@@ -1,10 +1,17 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.organisms
 
 import android.content.Context
 import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.core.content.withStyledAttributes
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPx
+import io.github.liconrepo.mds.perceptual.mdsPxF
+import io.github.liconrepo.mds.perceptual.rippleOf
+import io.github.liconrepo.mds.perceptual.roundedRect
+import io.github.liconrepo.mds.perceptual.withAlpha
 
 /** A container for one coherent piece of content. Clickable cards get a rounded ripple automatically. */
 public class MdsCard @JvmOverloads constructor(

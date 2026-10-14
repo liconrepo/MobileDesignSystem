@@ -1,188 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:fillViewport="true">
+    android:orientation="vertical">
 
+    <!-- Hero -->
     <LinearLayout
-        android:id="@+id/content"
+        android:id="@+id/hero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/mds_space_xl"
+        android:paddingTop="@dimen/mds_space_lg"
+        android:paddingBottom="@dimen/mds_space_lg">
 
-        <!-- Hero -->
-        <LinearLayout
-            android:id="@+id/hero"
+        <io.github.liconrepo.mds.functional.atoms.MdsBadge
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v0.1.0  ·  Views + Kotlin"
+            app:mdsTone="neutral"
+            tools:ignore="HardcodedText" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/mds_space_xl"
-            android:paddingTop="@dimen/mds_space_xxxl"
-            android:paddingBottom="@dimen/mds_space_xxl">
+            android:layout_marginTop="@dimen/mds_space_sm"
+            android:text="Mobile Design System"
+            android:textAppearance="@style/Mds.TextAppearance.Headline"
+            android:textColor="?attr/mdsColorOnPrimary"
+            tools:ignore="HardcodedText" />
 
-            <io.github.liconrepo.mds.MdsBadge
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="v0.1.0  ·  Views + Kotlin"
-                app:mdsTone="neutral"
-                tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mds_space_xs"
+            android:text="Pick a layer to see its parts."
+            android:textAppearance="@style/Mds.TextAppearance.BodySmall"
+            android:textColor="?attr/mdsColorOnPrimary"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/mds_space_lg"
-                android:text="Mobile Design System"
-                android:textAppearance="@style/Mds.TextAppearance.Display"
-                android:textColor="?attr/mdsColorOnPrimary"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/mds_space_md"
-                android:text="Tokens, components and guidance you can copy into any Android app. No Compose required."
-                android:textAppearance="@style/Mds.TextAppearance.Body"
-                android:textColor="?attr/mdsColorOnPrimary"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+    <!-- Tabs: one per layer. Built from MdsChip in code. -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/mdsColorSurface"
+        android:scrollbars="none">
 
         <LinearLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/mds_space_lg"
+            android:paddingVertical="@dimen/mds_space_xs" />
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mds_stroke_thin"
+        android:background="?attr/mdsColorOutline" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/mds_space_lg">
 
-            <!-- Appearance -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Theming" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Semantic tokens mean dark mode and brands are one switch away." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+            <FrameLayout
+                android:id="@+id/tabContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Dark mode" android:textAppearance="@style/Mds.TextAppearance.TitleSmall" />
-                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchDark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Dark mode" />
-                    </LinearLayout>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_md" android:text="Brand" android:textAppearance="@style/Mds.TextAppearance.Caption" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                        <io.github.liconrepo.mds.MdsChip android:id="@+id/chipOcean" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ocean" />
-                        <io.github.liconrepo.mds.MdsChip android:id="@+id/chipSunset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="Sunset" />
-                    </LinearLayout>
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <!-- Buttons -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Buttons" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Variants express importance. Use one primary per region." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <io.github.liconrepo.mds.MdsButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Primary" />
-                    <io.github.liconrepo.mds.MdsButton style="@style/Mds.Widget.Button.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" android:text="Secondary" />
-                    <io.github.liconrepo.mds.MdsButton style="@style/Mds.Widget.Button.Outline" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" android:text="Outline" />
-                    <io.github.liconrepo.mds.MdsButton style="@style/Mds.Widget.Button.Ghost" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" android:text="Ghost" />
-                    <io.github.liconrepo.mds.MdsButton style="@style/Mds.Widget.Button.Destructive" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" android:text="Delete account" />
-                    <io.github.liconrepo.mds.MdsButton style="@style/Mds.Widget.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" android:enabled="false" android:text="Disabled" />
-
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:gravity="center_vertical" android:orientation="horizontal">
-                        <io.github.liconrepo.mds.MdsButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Small" app:mdsButtonSize="small" />
-                        <io.github.liconrepo.mds.MdsButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="Medium" />
-                        <io.github.liconrepo.mds.MdsButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="Large" app:mdsButtonSize="large" />
-                    </LinearLayout>
-
-                    <io.github.liconrepo.mds.MdsButton android:id="@+id/btnLoading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:text="Tap to simulate saving" app:mdsButtonSize="large" />
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <!-- Text fields -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Text fields" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Always labelled. Errors use an icon and text, not just colour." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <io.github.liconrepo.mds.MdsTextField android:id="@+id/fieldEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="you@example.com" android:inputType="textEmailAddress" app:mdsHelperText="We only use this to send receipts." app:mdsLabel="Email" />
-                    <io.github.liconrepo.mds.MdsTextField android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:enabled="false" android:text="Read only value" app:mdsLabel="Workspace" />
-                    <io.github.liconrepo.mds.MdsButton android:id="@+id/btnValidate" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:text="Validate email" app:mdsButtonVariant="secondary" />
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <!-- Feedback -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Feedback" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Tone carries meaning. Each tone also has its own icon." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsAlert android:layout_width="match_parent" android:layout_height="wrap_content" app:mdsAlertMessage="Your trial ends in 3 days." app:mdsAlertTitle="Heads up" app:mdsTone="info" />
-            <io.github.liconrepo.mds.MdsAlert android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" app:mdsAlertMessage="Your changes were saved." app:mdsAlertTitle="All good" app:mdsTone="success" />
-            <io.github.liconrepo.mds.MdsAlert android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" app:mdsAlertMessage="Storage is almost full." app:mdsAlertTitle="Check this" app:mdsTone="warning" />
-            <io.github.liconrepo.mds.MdsAlert android:id="@+id/alertDanger" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_sm" app:mdsAlertDismissible="true" app:mdsAlertMessage="We could not reach the server. You can dismiss this." app:mdsAlertTitle="Connection lost" app:mdsTone="danger" />
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:orientation="horizontal">
-                <io.github.liconrepo.mds.MdsBadge android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Draft" app:mdsTone="neutral" />
-                <io.github.liconrepo.mds.MdsBadge android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="New" app:mdsTone="brand" />
-                <io.github.liconrepo.mds.MdsBadge android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="Paid" app:mdsTone="success" />
-                <io.github.liconrepo.mds.MdsBadge android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_sm" android:text="Overdue" app:mdsTone="danger" />
-            </LinearLayout>
-
-            <!-- People & lists -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Avatars and lists" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Initials get a stable tone per name." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="0dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/mds_space_lg">
-                        <io.github.liconrepo.mds.MdsAvatar android:layout_width="wrap_content" android:layout_height="wrap_content" app:mdsAvatarName="Ada Lovelace" app:mdsAvatarSize="small" />
-                        <io.github.liconrepo.mds.MdsAvatar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_md" app:mdsAvatarName="Grace Hopper" app:mdsAvatarSize="medium" />
-                        <io.github.liconrepo.mds.MdsAvatar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_md" app:mdsAvatarName="Linus Torvalds" app:mdsAvatarSize="large" />
-                        <io.github.liconrepo.mds.MdsAvatar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_md" app:mdsAvatarName="Margaret Hamilton" app:mdsAvatarSize="xlarge" />
-                    </LinearLayout>
-                    <io.github.liconrepo.mds.MdsListItem android:id="@+id/listTokens" android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true" app:mdsListItemIcon="@drawable/mds_ic_info" app:mdsListItemShowChevron="true" app:mdsListItemSubtitle="Primitive, semantic and component tiers" app:mdsListItemTitle="Design tokens" />
-                    <io.github.liconrepo.mds.MdsListItem android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true" app:mdsListItemIcon="@drawable/mds_ic_success" app:mdsListItemShowChevron="true" app:mdsListItemSubtitle="Contrast checked in light and dark" app:mdsListItemTitle="Accessibility" />
-                    <io.github.liconrepo.mds.MdsListItem android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true" app:mdsListItemIcon="@drawable/mds_ic_check" app:mdsListItemSubtitle="Plain Views, plain Kotlin" app:mdsListItemTitle="No Compose" />
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <!-- Loading -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Loading states" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Skeletons reserve space and stop animating when animations are off." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content" app:mdsCardVariant="elevated">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <LinearLayout android:id="@+id/skeletonGroup" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                        <io.github.liconrepo.mds.MdsSkeleton android:layout_width="48dp" android:layout_height="48dp" app:mdsSkeletonCircle="true" />
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_md" android:layout_weight="1" android:orientation="vertical">
-                            <io.github.liconrepo.mds.MdsSkeleton android:layout_width="160dp" android:layout_height="14dp" />
-                            <io.github.liconrepo.mds.MdsSkeleton android:layout_width="match_parent" android:layout_height="12dp" android:layout_marginTop="@dimen/mds_space_sm" />
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout android:id="@+id/loadedGroup" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:visibility="gone">
-                        <io.github.liconrepo.mds.MdsAvatar android:layout_width="wrap_content" android:layout_height="wrap_content" app:mdsAvatarName="Katherine Johnson" app:mdsAvatarSize="large" />
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/mds_space_md" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Katherine Johnson" android:textAppearance="@style/Mds.TextAppearance.TitleSmall" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Content has arrived." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-                        </LinearLayout>
-                    </LinearLayout>
-                    <io.github.liconrepo.mds.MdsButton android:id="@+id/btnToggleSkeleton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_lg" android:text="Load content" app:mdsButtonVariant="outline" />
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <!-- Foundations -->
-            <TextView style="@style/Sample.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xxl" android:text="Foundations" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mds_space_md" android:text="Colour roles, type scale and spacing, generated from the live theme." android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
-
-            <io.github.liconrepo.mds.MdsCard android:layout_width="match_parent" android:layout_height="wrap_content">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Colour roles" android:textAppearance="@style/Mds.TextAppearance.Overline" />
-                    <LinearLayout android:id="@+id/swatches" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_md" android:orientation="vertical" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xl" android:text="Type scale" android:textAppearance="@style/Mds.TextAppearance.Overline" />
-                    <LinearLayout android:id="@+id/typeScale" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_md" android:orientation="vertical" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xl" android:text="Spacing" android:textAppearance="@style/Mds.TextAppearance.Overline" />
-                    <LinearLayout android:id="@+id/spacing" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_md" android:orientation="vertical" />
-                </LinearLayout>
-            </io.github.liconrepo.mds.MdsCard>
-
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mds_space_xl" android:gravity="center" android:text="MIT licensed. Contributions welcome." android:textAppearance="@style/Mds.TextAppearance.Caption" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_xl"
+                android:gravity="center"
+                android:text="MIT licensed. Contributions welcome."
+                android:textAppearance="@style/Mds.TextAppearance.Caption"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

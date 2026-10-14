@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How the system looks and feels: colour, type, spacing, tone and motion. Components never hard-code these; they read them from the theme."
+        android:textAppearance="@style/Mds.TextAppearance.Body" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Foundations" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Colour roles, type scale and spacing, generated from the live theme."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Colour roles"
+                android:textAppearance="@style/Mds.TextAppearance.Overline" />
+
+            <LinearLayout
+                android:id="@+id/swatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_xl"
+                android:text="Type scale"
+                android:textAppearance="@style/Mds.TextAppearance.Overline" />
+
+            <LinearLayout
+                android:id="@+id/typeScale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_xl"
+                android:text="Spacing"
+                android:textAppearance="@style/Mds.TextAppearance.Overline" />
+
+            <LinearLayout
+                android:id="@+id/spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Tone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="MdsTone is shared vocabulary: one name, one meaning, in every component. Each row shows its container and solid pair."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Motion" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="MdsMotion is the single place that decides whether animation runs."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/motionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Mds.TextAppearance.Body" />
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Theming" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Semantic tokens mean dark mode and brands are one switch away."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dark mode"
+                    android:textAppearance="@style/Mds.TextAppearance.TitleSmall" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Dark mode" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:text="Brand"
+                android:textAppearance="@style/Mds.TextAppearance.Caption" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.github.liconrepo.mds.functional.atoms.MdsChip
+                    android:id="@+id/chipOcean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ocean" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsChip
+                    android:id="@+id/chipSunset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_sm"
+                    android:text="Sunset" />
+            </LinearLayout>
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+</LinearLayout>

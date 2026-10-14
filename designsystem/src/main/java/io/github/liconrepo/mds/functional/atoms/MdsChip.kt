@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -8,6 +8,14 @@ import android.util.TypedValue
 import android.view.Gravity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatCheckBox
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.dp
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPx
+import io.github.liconrepo.mds.perceptual.mdsPxF
+import io.github.liconrepo.mds.perceptual.rippleOf
+import io.github.liconrepo.mds.perceptual.roundedRect
+import io.github.liconrepo.mds.perceptual.withAlpha
 
 /** A toggleable filter or choice. Selection shows a check mark as well as a colour change. */
 public class MdsChip @JvmOverloads constructor(

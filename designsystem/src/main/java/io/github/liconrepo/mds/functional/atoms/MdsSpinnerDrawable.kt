@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import android.animation.ValueAnimator
 import android.graphics.Canvas

@@ -16,14 +16,41 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import io.github.liconrepo.mds.R as Mds
-import io.github.liconrepo.mds.mdsColor
-import io.github.liconrepo.mds.mdsPx
+import io.github.liconrepo.mds.functional.atoms.MdsBadge
+import io.github.liconrepo.mds.functional.atoms.MdsChip
+import io.github.liconrepo.mds.perceptual.MdsMotion
+import io.github.liconrepo.mds.perceptual.MdsTone
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPx
 import io.github.liconrepo.mds.sample.databinding.ActivityMainBinding
+import io.github.liconrepo.mds.sample.databinding.TabAtomsBinding
+import io.github.liconrepo.mds.sample.databinding.TabMoleculesBinding
+import io.github.liconrepo.mds.sample.databinding.TabOrganismsBinding
+import io.github.liconrepo.mds.sample.databinding.TabPagesBinding
+import io.github.liconrepo.mds.sample.databinding.TabPerceptualBinding
+import io.github.liconrepo.mds.sample.databinding.TabTemplatesBinding
+import io.github.liconrepo.mds.sample.pages.ProfilePage
+import io.github.liconrepo.mds.sample.pages.SignInPage
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var prefs: Preferences
+
+    /** One tab per layer of the system. Each is inflated on first visit and kept, so state survives switching. */
+    private class Tab(val title: Int, val build: (MainActivity) -> View)
+
+    private val tabs = listOf(
+        Tab(R.string.tab_perceptual) { it.perceptualTab() },
+        Tab(R.string.tab_atoms) { it.atomsTab() },
+        Tab(R.string.tab_molecules) { it.moleculesTab() },
+        Tab(R.string.tab_organisms) { it.organismsTab() },
+        Tab(R.string.tab_templates) { it.templatesTab() },
+        Tab(R.string.tab_pages) { it.pagesTab() },
+    )
+    private val tabViews = arrayOfNulls<View>(tabs.size)
+    private val tabChips = mutableListOf<MdsChip>()
+    private var selectedTab = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         prefs = Preferences(this)
@@ -36,11 +63,76 @@ class MainActivity : AppCompatActivity() {
 
         applyInsets()
         styleHero()
-        bindAppearance()
-        bindButtons()
-        bindFields()
-        bindLoading()
-        buildFoundations()
+        buildTabs()
+        selectTab(savedInstanceState?.getInt(KEY_TAB) ?: intent.getIntExtra(KEY_TAB, 0))
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_TAB, selectedTab)
+    }
+
+    private fun buildTabs() {
+        val gap = mdsPx(Mds.dimen.mds_space_sm)
+        tabs.forEachIndexed { index, tab ->
+            val chip = MdsChip(this).apply {
+                setText(tab.title)
+                isSaveEnabled = false
+                // Chips are checkboxes; keep the strip behaving like a radio group.
+                setOnClickListener { selectTab(index) }
+            }
+            tabChips += chip
+            binding.tabs.addView(
+                chip,
+                LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    .apply { marginEnd = gap },
+            )
+        }
+    }
+
+    private fun selectTab(index: Int) {
+        selectedTab = index.coerceIn(0, tabs.lastIndex)
+        tabChips.forEachIndexed { i, chip -> chip.isChecked = i == selectedTab }
+        val view = tabViews[selectedTab] ?: tabs[selectedTab].build(this).also { tabViews[selectedTab] = it }
+        binding.tabContent.removeAllViews()
+        binding.tabContent.addView(view)
+        binding.scroll.scrollTo(0, 0)
+    }
+
+    private fun perceptualTab(): View {
+        val tab = TabPerceptualBinding.inflate(layoutInflater, binding.tabContent, false)
+        bindAppearance(tab)
+        buildFoundations(tab)
+        buildTones(tab)
+        showMotionPolicy(tab)
+        return tab.root
+    }
+
+    private fun atomsTab(): View {
+        val tab = TabAtomsBinding.inflate(layoutInflater, binding.tabContent, false)
+        bindButtons(tab)
+        return tab.root
+    }
+
+    private fun moleculesTab(): View {
+        val tab = TabMoleculesBinding.inflate(layoutInflater, binding.tabContent, false)
+        bindFields(tab)
+        return tab.root
+    }
+
+    private fun organismsTab(): View {
+        val tab = TabOrganismsBinding.inflate(layoutInflater, binding.tabContent, false)
+        bindLoading(tab)
+        return tab.root
+    }
+
+    private fun templatesTab(): View = TabTemplatesBinding.inflate(layoutInflater, binding.tabContent, false).root
+
+    private fun pagesTab(): View {
+        val tab = TabPagesBinding.inflate(layoutInflater, binding.tabContent, false)
+        tab.pageSignIn.setOnClickListener { startActivity(Intent(this, SignInPage::class.java)) }
+        tab.pageProfile.setOnClickListener { startActivity(Intent(this, ProfilePage::class.java)) }
+        return tab.root
     }
 
     // The manifest declares uiMode as handled, so a system dark-mode change lands here instead of recreating.
@@ -54,7 +146,11 @@ class MainActivity : AppCompatActivity() {
      * window kept the system bars' insets as padding on the emulator, a fresh launch does not.
      */
     private fun restart() {
-        startActivity(Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION))
+        startActivity(
+            Intent(this, MainActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                .putExtra(KEY_TAB, selectedTab),
+        )
         finish()
         @Suppress("DEPRECATION")
         overridePendingTransition(0, 0)
@@ -63,25 +159,17 @@ class MainActivity : AppCompatActivity() {
     private fun applyInsets() {
         val heroTop = binding.hero.paddingTop
         val contentBottom = binding.content.paddingBottom
-        var statusBarHeight = 0
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            statusBarHeight = bars.top
             binding.root.post {
                 binding.hero.updatePadding(top = heroTop + bars.top)
                 binding.content.updatePadding(bottom = contentBottom + bars.bottom)
             }
             insets
         }
-        // Status bar icons must contrast with whatever is underneath: the brand hero first, the page after.
-        val update = {
-            val overHero = binding.scroll.scrollY < binding.hero.height - statusBarHeight
-            val under = mdsColor(if (overHero) Mds.attr.mdsColorPrimary else Mds.attr.mdsColorBackground)
-            WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars =
-                ColorUtils.calculateLuminance(under) > 0.4
-        }
-        binding.scroll.setOnScrollChangeListener { _, _, _, _, _ -> update() }
-        binding.scroll.post { update() }
+        // The brand hero sits under the status bar, so the bar icons must contrast with it.
+        WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars =
+            ColorUtils.calculateLuminance(mdsColor(Mds.attr.mdsColorPrimary)) > 0.4
     }
 
     private fun styleHero() {
@@ -94,7 +182,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun bindAppearance() {
+    private fun bindAppearance(binding: TabPerceptualBinding) {
         val isDark = (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) ==
             android.content.res.Configuration.UI_MODE_NIGHT_YES
         // These controls always reflect current state, so never let view-state restore overwrite them.
@@ -112,11 +200,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.chipOcean.isChecked = !prefs.sunset
         binding.chipSunset.isChecked = prefs.sunset
-        binding.chipOcean.setOnClickListener { chooseBrand(sunset = false) }
-        binding.chipSunset.setOnClickListener { chooseBrand(sunset = true) }
+        binding.chipOcean.setOnClickListener { chooseBrand(binding, sunset = false) }
+        binding.chipSunset.setOnClickListener { chooseBrand(binding, sunset = true) }
     }
 
-    private fun chooseBrand(sunset: Boolean) {
+    private fun chooseBrand(binding: TabPerceptualBinding, sunset: Boolean) {
         if (prefs.sunset == sunset) {
             // Chips are checkboxes; keep the group behaving like a radio group.
             binding.chipOcean.isChecked = !sunset
@@ -127,7 +215,7 @@ class MainActivity : AppCompatActivity() {
         restart()
     }
 
-    private fun bindButtons() {
+    private fun bindButtons(binding: TabAtomsBinding) {
         binding.btnLoading.setOnClickListener {
             binding.btnLoading.isLoading = true
             binding.btnLoading.text = getString(R.string.saving)
@@ -138,7 +226,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun bindFields() {
+    private fun bindFields(binding: TabMoleculesBinding) {
+        binding.alertDanger.onDismiss = { /* nothing to do: the alert hides itself */ }
         binding.btnValidate.setOnClickListener {
             val email = binding.fieldEmail.text?.toString().orEmpty().trim()
             binding.fieldEmail.errorText = when {
@@ -149,8 +238,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun bindLoading() {
-        binding.alertDanger.onDismiss = { /* nothing to do: the alert hides itself */ }
+    private fun bindLoading(binding: TabOrganismsBinding) {
         binding.btnToggleSkeleton.setOnClickListener {
             val showSkeleton = binding.skeletonGroup.visibility != View.VISIBLE
             binding.skeletonGroup.visibility = if (showSkeleton) View.VISIBLE else View.GONE
@@ -159,8 +247,42 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /** One row per MdsTone: the subtle container pair beside the solid pair, resolved from the live theme. */
+    private fun buildTones(binding: TabPerceptualBinding) {
+        val gap = mdsPx(Mds.dimen.mds_space_sm)
+        MdsTone.entries.forEach { t ->
+            val row = LinearLayout(this).apply { gravity = Gravity.CENTER_VERTICAL }
+            row.addView(MdsBadge(this).apply {
+                tone = t
+                text = t.name
+            })
+            row.addView(
+                TextView(this).apply {
+                    text = "Solid"
+                    TextViewCompat.setTextAppearance(this, Mds.style.Mds_TextAppearance_Label)
+                    setTextColor(t.onSolid(context))
+                    setPadding(mdsPx(Mds.dimen.mds_space_md), gap / 2, mdsPx(Mds.dimen.mds_space_md), gap / 2)
+                    background = swatchBackground(t.solid(context), t.solid(context), mdsPx(Mds.dimen.mds_radius_full).toFloat())
+                },
+                LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    .apply { marginStart = gap },
+            )
+            binding.tones.addView(
+                row,
+                LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    .apply { bottomMargin = gap },
+            )
+        }
+    }
+
+    private fun showMotionPolicy(binding: TabPerceptualBinding) {
+        binding.motionStatus.text = getString(
+            if (MdsMotion.isReduced(this)) R.string.motion_reduced else R.string.motion_full,
+        )
+    }
+
     /** Foundations are rendered from the live theme, so they are documentation that can never go stale. */
-    private fun buildFoundations() {
+    private fun buildFoundations(binding: TabPerceptualBinding) {
         val roles = listOf(
             "Primary" to (Mds.attr.mdsColorPrimary to Mds.attr.mdsColorOnPrimary),
             "Primary container" to (Mds.attr.mdsColorPrimaryContainer to Mds.attr.mdsColorOnPrimaryContainer),
@@ -234,6 +356,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+private const val KEY_TAB = "tab"
 
 private fun swatchBackground(fill: Int, stroke: Int, radius: Float) = android.graphics.drawable.GradientDrawable().apply {
     cornerRadius = radius

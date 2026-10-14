@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != '/' %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  {% include header.html %}
+  <div class="shell">
+    <nav class="side-nav" aria-label="Documentation">
+      {% assign doc_pages = site.pages | where_exp: "p", "p.nav_order != nil" | sort: "nav_order" %}
+      <ul>
+        {% for p in doc_pages %}
+        <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <main id="main" class="doc">
+      {{ content }}
+    </main>
+  </div>
+  {% include footer.html %}
+</body>
+</html>

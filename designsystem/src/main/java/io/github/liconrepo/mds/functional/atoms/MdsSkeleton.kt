@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -13,6 +13,11 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.core.content.withStyledAttributes
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.MdsMotion
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPxF
+import io.github.liconrepo.mds.perceptual.withAlpha
 
 /**
  * A placeholder shown while content loads. Size it with layout params.

@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
@@ -7,6 +7,10 @@ import android.util.TypedValue
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.withStyledAttributes
 import androidx.core.widget.TextViewCompat
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.MdsTone
+import io.github.liconrepo.mds.perceptual.dp
+import io.github.liconrepo.mds.perceptual.mdsPxF
 
 /** A short status label. Always pair tone with text; never rely on colour alone. */
 public class MdsBadge @JvmOverloads constructor(

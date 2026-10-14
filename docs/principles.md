@@ -1,3 +1,8 @@
+---
+title: Principles
+nav_order: 2
+---
+
 # Design principles
 
 Principles are only useful if they settle arguments. Each one below says what to do when two options collide.
@@ -22,7 +27,8 @@ It helps to name two kinds of pattern:
 - **Functional**: what a pattern does. `MdsButton` triggers an action; `MdsTextField` collects text.
 - **Perceptual**: how it looks and feels. Corner radius, type scale, tone colours, spacing rhythm.
 
-In this repo functional behaviour lives in Kotlin classes and perceptual choices live in resources (tokens). Keeping
+In this repo functional behaviour lives in Kotlin classes under `functional/` (split into `atoms`, `molecules` and
+`organisms`) and perceptual choices live in resources (tokens) and the `perceptual` package (`MdsTone`, `MdsMotion`). Keeping
 them apart means a rebrand edits `res/values`, and a behaviour fix edits one class.
 
 ## Shared vocabulary

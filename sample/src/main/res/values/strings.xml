@@ -7,4 +7,15 @@
     <string name="error_email_invalid">That does not look like an email address.</string>
     <string name="load_content">Load content</string>
     <string name="show_skeleton">Show skeleton</string>
+    <string name="motion_reduced">Animations are off in system settings, so skeletons stay still.</string>
+    <string name="motion_full">Animations are on. Turn them off in system settings and skeletons stop shimmering.</string>
+    <string name="error_password_short">Use at least 8 characters.</string>
+    <string name="signed_in_title">Signed in</string>
+    <string name="signed_in_message">Welcome back. This is a demo, so nothing happened.</string>
+    <string name="tab_perceptual">Perceptual</string>
+    <string name="tab_atoms">Atoms</string>
+    <string name="tab_molecules">Molecules</string>
+    <string name="tab_organisms">Organisms</string>
+    <string name="tab_templates">Templates</string>
+    <string name="tab_pages">Pages</string>
 </resources>

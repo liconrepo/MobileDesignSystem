@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.atoms
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame

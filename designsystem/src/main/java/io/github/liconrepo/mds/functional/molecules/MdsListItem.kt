@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.molecules
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -15,6 +15,14 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.withStyledAttributes
 import androidx.core.widget.ImageViewCompat
 import androidx.core.widget.TextViewCompat
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.dp
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPx
+import io.github.liconrepo.mds.perceptual.mdsPxF
+import io.github.liconrepo.mds.perceptual.rippleOf
+import io.github.liconrepo.mds.perceptual.roundedRect
+import io.github.liconrepo.mds.perceptual.withAlpha
 
 /** A row with an optional leading icon, a title, a subtitle and an optional chevron. */
 public class MdsListItem @JvmOverloads constructor(

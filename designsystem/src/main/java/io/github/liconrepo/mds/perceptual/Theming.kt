@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.perceptual
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -10,6 +10,7 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.DimenRes
+import io.github.liconrepo.mds.R
 
 /**
  * Resolves a semantic colour attribute (for example [R.attr.mdsColorPrimary]) against this context's theme.

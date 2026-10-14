@@ -1,4 +1,4 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.functional.molecules
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -21,6 +21,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.ViewCompat
 import androidx.core.widget.TextViewCompat
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.perceptual.dp
+import io.github.liconrepo.mds.perceptual.mdsColor
+import io.github.liconrepo.mds.perceptual.mdsPx
+import io.github.liconrepo.mds.perceptual.mdsPxF
 
 /**
  * A labelled text input with helper and error text.

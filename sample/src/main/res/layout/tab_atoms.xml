@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The smallest parts that still do a job. Each one stands alone and knows nothing about the others."
+        android:textAppearance="@style/Mds.TextAppearance.Body" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Buttons" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Variants express importance. Use one primary per region."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Primary" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                style="@style/Mds.Widget.Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:text="Secondary" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                style="@style/Mds.Widget.Button.Outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:text="Outline" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                style="@style/Mds.Widget.Button.Ghost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:text="Ghost" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                style="@style/Mds.Widget.Button.Destructive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:text="Delete account" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                style="@style/Mds.Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_md"
+                android:enabled="false"
+                android:text="Disabled" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_lg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <io.github.liconrepo.mds.functional.atoms.MdsButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small"
+                    app:mdsButtonSize="small" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_sm"
+                    android:text="Medium" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_sm"
+                    android:text="Large"
+                    app:mdsButtonSize="large" />
+            </LinearLayout>
+
+            <io.github.liconrepo.mds.functional.atoms.MdsButton
+                android:id="@+id/btnLoading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mds_space_lg"
+                android:text="Tap to simulate saving"
+                app:mdsButtonSize="large" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Badges" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Short status labels. Always pair tone with text, never colour alone."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <io.github.liconrepo.mds.functional.atoms.MdsBadge
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Draft"
+            app:mdsTone="neutral" />
+
+        <io.github.liconrepo.mds.functional.atoms.MdsBadge
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mds_space_sm"
+            android:text="New"
+            app:mdsTone="brand" />
+
+        <io.github.liconrepo.mds.functional.atoms.MdsBadge
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mds_space_sm"
+            android:text="Paid"
+            app:mdsTone="success" />
+
+        <io.github.liconrepo.mds.functional.atoms.MdsBadge
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mds_space_sm"
+            android:text="Overdue"
+            app:mdsTone="danger" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Chips" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Selectable and compact. Used above to choose the brand."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <io.github.liconrepo.mds.functional.atoms.MdsChip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Design" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsChip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_sm"
+                    android:text="Android" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsChip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_sm"
+                    android:text="Kotlin" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Avatars" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Initials get a stable tone per name."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <io.github.liconrepo.mds.functional.atoms.MdsAvatar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:mdsAvatarName="Ada Lovelace"
+                    app:mdsAvatarSize="small" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsAvatar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_md"
+                    app:mdsAvatarName="Grace Hopper"
+                    app:mdsAvatarSize="medium" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsAvatar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_md"
+                    app:mdsAvatarName="Linus Torvalds"
+                    app:mdsAvatarSize="large" />
+
+                <io.github.liconrepo.mds.functional.atoms.MdsAvatar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mds_space_md"
+                    app:mdsAvatarName="Margaret Hamilton"
+                    app:mdsAvatarSize="xlarge" />
+            </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Skeletons" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Reserve space and stop animating when animations are off."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:mdsSkeletonCircle="true" />
+
+            <io.github.liconrepo.mds.functional.atoms.MdsSkeleton
+                android:layout_width="160dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="@dimen/mds_space_md" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+</LinearLayout>

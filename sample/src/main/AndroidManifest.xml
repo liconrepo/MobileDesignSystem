@@ -17,5 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".pages.SignInPage" android:exported="false" />
+        <activity android:name=".pages.ProfilePage" android:exported="false" />
     </application>
 </manifest>

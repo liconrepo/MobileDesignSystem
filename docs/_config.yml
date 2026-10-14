@@ -1,0 +1,14 @@
+title: Mobile Design System
+description: A small, opinionated, View-based design system for Android, written in Kotlin.
+url: https://liconrepo.github.io
+baseurl: /MobileDesignSystem
+repository_url: https://github.com/liconrepo/MobileDesignSystem
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }

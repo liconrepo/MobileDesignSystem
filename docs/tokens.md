@@ -1,3 +1,8 @@
+---
+title: Tokens
+nav_order: 3
+---
+
 # Tokens
 
 Tokens are named design decisions. There are three tiers, and a value may only be referenced from the tier directly above it.

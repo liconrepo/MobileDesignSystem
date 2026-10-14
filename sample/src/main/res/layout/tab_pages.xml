@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A template filled with real content. This is the stage people actually see, and where the system gets tested."
+        android:textAppearance="@style/Mds.TextAppearance.Body" />
+
+    <TextView
+        style="@style/Sample.Section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xl"
+        android:text="Open a page" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mds_space_xs"
+        android:layout_marginBottom="@dimen/mds_space_md"
+        android:text="Each page is an Activity built on MdsScreenTemplate."
+        android:textAppearance="@style/Mds.TextAppearance.BodySmall" />
+
+    <io.github.liconrepo.mds.functional.organisms.MdsCard
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:id="@+id/pageSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_info"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Alert, text fields and buttons"
+                app:mdsListItemTitle="Sign in" />
+
+            <io.github.liconrepo.mds.functional.molecules.MdsListItem
+                android:id="@+id/pageProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:mdsListItemIcon="@drawable/mds_ic_success"
+                app:mdsListItemShowChevron="true"
+                app:mdsListItemSubtitle="Card, avatar, badge and list items"
+                app:mdsListItemTitle="Profile" />
+        </LinearLayout>
+    </io.github.liconrepo.mds.functional.organisms.MdsCard>
+</LinearLayout>

@@ -3,6 +3,9 @@
     <!-- The only line an app needs to adopt the design system. -->
     <style name="Theme.Sample" parent="Theme.Mds" />
 
+    <style name="Sample.Layer" parent="Mds.TextAppearance.Overline">
+        <item name="android:textColor">?attr/mdsColorPrimary</item>
+    </style>
     <style name="Sample.Section" parent="Mds.TextAppearance.Headline">
         <item name="android:textSize">22sp</item>
     </style>

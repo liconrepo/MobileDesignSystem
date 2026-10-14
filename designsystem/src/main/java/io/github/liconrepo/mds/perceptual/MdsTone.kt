@@ -1,8 +1,9 @@
-package io.github.liconrepo.mds
+package io.github.liconrepo.mds.perceptual
 
 import android.content.Context
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import io.github.liconrepo.mds.R
 
 /**
  * Communicates meaning, never decoration. Every tone resolves to a container/on-container pair

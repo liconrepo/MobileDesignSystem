@@ -1,3 +1,8 @@
+---
+title: Components
+nav_order: 5
+---
+
 # Component guidelines
 
 ## Button (`MdsButton`)
@@ -29,6 +34,15 @@
 
 - Avatar initials use a stable tone per name; supply `name` so accessibility gets a description.
 - Skeletons mirror the final layout's size to avoid jumps; stop showing them as soon as content arrives.
+
+## Screen template (`MdsScreenTemplate`)
+
+- Use one per screen. It gives every page the same header, spacing and pinned actions.
+- XML children land in the scrolling content region. Add `app:layout_mdsTemplateSlot="footer"` to pin a button
+  to the bottom; the footer and its divider stay hidden until there is one.
+- The primary action goes in the footer so it is always reachable. Keep it to one primary button.
+- The template does not handle system bar insets. Pad the root in the host Activity (see `PageActivity` in the
+  sample).
 
 ## Accessibility checklist for every component
 

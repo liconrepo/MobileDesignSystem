@@ -51,7 +51,7 @@ afterEvaluate {
                 version = project.version.toString()
                 pom {
                     name.set("Mobile Design System")
-                    description.set("A View-based, token-driven design system for Android. No Compose required.")
+                    description.set("A View-based, token-driven design system for Android. No Compose dependency.")
                     url.set("https://github.com/liconrepo/MobileDesignSystem")
                     licenses {
                         license {
