@@ -159,6 +159,11 @@ dependencies { implementation("io.github.liconrepo:mds:0.1.0") }
 To distribute publicly, push a version tag and use [JitPack](https://jitpack.io)
 (`jitpack.yml` is included), or add a Maven Central repository to the publishing block.
 
+## Contributing
+
+Contributions are welcome. Fork the repo, create a branch, and open a pull request. The step-by-step guide
+(fork, `upstream` remote, branch, checks, pull request, staying in sync) is in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Credits and inspiration
 
 The structure borrows *ideas* (never code or assets) from public design systems and writing:
