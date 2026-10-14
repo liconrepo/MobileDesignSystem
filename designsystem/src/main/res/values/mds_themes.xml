@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Tier 3 - the theme maps semantic colour resources onto theme attributes.
+      Components only ever read these attributes, which is what makes dark mode,
+      brand overlays and per-screen theming work without touching component code.
+    -->
+    <style name="Theme.Mds" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="mdsColorBackground">@color/mds_color_background</item>
+        <item name="mdsColorSurface">@color/mds_color_surface</item>
+        <item name="mdsColorSurfaceVariant">@color/mds_color_surface_variant</item>
+        <item name="mdsColorOnSurface">@color/mds_color_on_surface</item>
+        <item name="mdsColorOnSurfaceVariant">@color/mds_color_on_surface_variant</item>
+        <item name="mdsColorOnSurfaceMuted">@color/mds_color_on_surface_muted</item>
+        <item name="mdsColorOnSurfaceDisabled">@color/mds_color_on_surface_disabled</item>
+        <item name="mdsColorOutline">@color/mds_color_outline</item>
+        <item name="mdsColorOutlineStrong">@color/mds_color_outline_strong</item>
+
+        <item name="mdsColorPrimary">@color/mds_color_primary</item>
+        <item name="mdsColorPrimaryPressed">@color/mds_color_primary_pressed</item>
+        <item name="mdsColorOnPrimary">@color/mds_color_on_primary</item>
+        <item name="mdsColorPrimaryContainer">@color/mds_color_primary_container</item>
+        <item name="mdsColorOnPrimaryContainer">@color/mds_color_on_primary_container</item>
+
+        <item name="mdsColorDanger">@color/mds_color_danger</item>
+        <item name="mdsColorOnDanger">@color/mds_color_on_danger</item>
+        <item name="mdsColorDangerContainer">@color/mds_color_danger_container</item>
+        <item name="mdsColorOnDangerContainer">@color/mds_color_on_danger_container</item>
+
+        <item name="mdsColorSuccess">@color/mds_color_success</item>
+        <item name="mdsColorOnSuccess">@color/mds_color_on_success</item>
+        <item name="mdsColorSuccessContainer">@color/mds_color_success_container</item>
+        <item name="mdsColorOnSuccessContainer">@color/mds_color_on_success_container</item>
+
+        <item name="mdsColorWarning">@color/mds_color_warning</item>
+        <item name="mdsColorOnWarning">@color/mds_color_on_warning</item>
+        <item name="mdsColorWarningContainer">@color/mds_color_warning_container</item>
+        <item name="mdsColorOnWarningContainer">@color/mds_color_on_warning_container</item>
+
+        <item name="mdsColorInfo">@color/mds_color_info</item>
+        <item name="mdsColorOnInfo">@color/mds_color_on_info</item>
+        <item name="mdsColorInfoContainer">@color/mds_color_info_container</item>
+        <item name="mdsColorOnInfoContainer">@color/mds_color_on_info_container</item>
+
+        <!-- Default component styles -->
+        <item name="mdsButtonStyle">@style/Mds.Widget.Button</item>
+        <item name="mdsTextFieldStyle">@style/Mds.Widget.TextField</item>
+        <item name="mdsCardStyle">@style/Mds.Widget.Card</item>
+        <item name="mdsBadgeStyle">@style/Mds.Widget.Badge</item>
+        <item name="mdsChipStyle">@style/Mds.Widget.Chip</item>
+        <item name="mdsAvatarStyle">@style/Mds.Widget.Avatar</item>
+        <item name="mdsAlertStyle">@style/Mds.Widget.Alert</item>
+        <item name="mdsListItemStyle">@style/Mds.Widget.ListItem</item>
+        <item name="mdsSkeletonStyle">@style/Mds.Widget.Skeleton</item>
+        <item name="switchStyle">@style/Mds.Widget.Switch</item>
+
+        <!-- Make un-styled framework/AppCompat widgets agree with the system -->
+        <item name="colorPrimary">?attr/mdsColorPrimary</item>
+        <item name="colorPrimaryDark">?attr/mdsColorPrimary</item>
+        <item name="colorAccent">?attr/mdsColorPrimary</item>
+        <item name="colorControlActivated">?attr/mdsColorPrimary</item>
+        <item name="colorControlNormal">?attr/mdsColorOutlineStrong</item>
+        <item name="android:colorBackground">?attr/mdsColorBackground</item>
+        <item name="android:windowBackground">?attr/mdsColorBackground</item>
+        <item name="android:textColorPrimary">?attr/mdsColorOnSurface</item>
+        <item name="android:textColorSecondary">?attr/mdsColorOnSurfaceMuted</item>
+        <item name="android:textColorHint">?attr/mdsColorOnSurfaceMuted</item>
+        <item name="android:textColor">?attr/mdsColorOnSurface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">@bool/mds_is_light</item>
+    </style>
+
+    <!-- Brand overlay: apply on top of Theme.Mds (e.g. via setTheme or android:theme). -->
+    <style name="ThemeOverlay.Mds.Sunset" parent="">
+        <item name="mdsColorPrimary">@color/mds_sunset_primary</item>
+        <item name="mdsColorPrimaryPressed">@color/mds_sunset_primary_pressed</item>
+        <item name="mdsColorOnPrimary">@color/mds_sunset_on_primary</item>
+        <item name="mdsColorPrimaryContainer">@color/mds_sunset_primary_container</item>
+        <item name="mdsColorOnPrimaryContainer">@color/mds_sunset_on_primary_container</item>
+    </style>
+</resources>

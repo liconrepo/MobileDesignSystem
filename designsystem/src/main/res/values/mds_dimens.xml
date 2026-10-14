@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Spacing, shape, elevation and size tokens. 4dp base grid. -->
+<resources>
+    <!-- Spacing -->
+    <dimen name="mds_space_xxs">2dp</dimen>
+    <dimen name="mds_space_xs">4dp</dimen>
+    <dimen name="mds_space_sm">8dp</dimen>
+    <dimen name="mds_space_md">12dp</dimen>
+    <dimen name="mds_space_lg">16dp</dimen>
+    <dimen name="mds_space_xl">24dp</dimen>
+    <dimen name="mds_space_xxl">32dp</dimen>
+    <dimen name="mds_space_xxxl">48dp</dimen>
+
+    <!-- Shape -->
+    <dimen name="mds_radius_xs">4dp</dimen>
+    <dimen name="mds_radius_sm">8dp</dimen>
+    <dimen name="mds_radius_md">12dp</dimen>
+    <dimen name="mds_radius_lg">16dp</dimen>
+    <dimen name="mds_radius_xl">24dp</dimen>
+    <dimen name="mds_radius_full">999dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="mds_elevation_none">0dp</dimen>
+    <dimen name="mds_elevation_low">2dp</dimen>
+    <dimen name="mds_elevation_high">8dp</dimen>
+
+    <!-- Stroke -->
+    <dimen name="mds_stroke_thin">1dp</dimen>
+    <dimen name="mds_stroke_thick">2dp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="mds_touch_target">48dp</dimen>
+    <dimen name="mds_control_height_sm">36dp</dimen>
+    <dimen name="mds_control_height_md">44dp</dimen>
+    <dimen name="mds_control_height_lg">52dp</dimen>
+    <dimen name="mds_icon_sm">16dp</dimen>
+    <dimen name="mds_icon_md">20dp</dimen>
+    <dimen name="mds_icon_lg">24dp</dimen>
+</resources>

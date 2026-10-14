@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mds_dismiss">Dismiss</string>
+    <string name="mds_state_loading">Loading</string>
+    <string name="mds_error_prefix">Error: %1$s</string>
+</resources>

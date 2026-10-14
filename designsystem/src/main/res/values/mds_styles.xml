@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Mds.Widget" parent="" />
+
+    <style name="Mds.Widget.Button">
+        <item name="mdsButtonVariant">primary</item>
+        <item name="mdsButtonSize">medium</item>
+    </style>
+    <style name="Mds.Widget.Button.Secondary">
+        <item name="mdsButtonVariant">secondary</item>
+    </style>
+    <style name="Mds.Widget.Button.Outline">
+        <item name="mdsButtonVariant">outline</item>
+    </style>
+    <style name="Mds.Widget.Button.Ghost">
+        <item name="mdsButtonVariant">ghost</item>
+    </style>
+    <style name="Mds.Widget.Button.Destructive">
+        <item name="mdsButtonVariant">destructive</item>
+    </style>
+
+    <style name="Mds.Widget.TextField" />
+    <style name="Mds.Widget.Card">
+        <item name="mdsCardVariant">outlined</item>
+        <item name="android:padding">@dimen/mds_space_lg</item>
+    </style>
+    <style name="Mds.Widget.Badge">
+        <item name="mdsTone">neutral</item>
+    </style>
+    <style name="Mds.Widget.Chip" />
+    <style name="Mds.Widget.Avatar">
+        <item name="mdsAvatarSize">medium</item>
+    </style>
+    <style name="Mds.Widget.Alert">
+        <item name="mdsTone">info</item>
+    </style>
+    <style name="Mds.Widget.ListItem" />
+    <style name="Mds.Widget.Skeleton" />
+
+    <style name="Mds.Widget.Switch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="thumbTint">@color/mds_switch_thumb</item>
+        <item name="trackTint">@color/mds_switch_track</item>
+        <item name="android:minHeight">@dimen/mds_touch_target</item>
+    </style>
+</resources>

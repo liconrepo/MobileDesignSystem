@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Qualified resources replace whole styles, so per-mode flags live here instead. -->
+    <bool name="mds_is_light">true</bool>
+</resources>

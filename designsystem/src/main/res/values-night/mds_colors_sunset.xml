@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tier 2 - SEMANTIC tokens (Sunset brand, dark).
+  Named for the job they do, not how they look. Themes map these to attributes.
+-->
+<resources>
+    <color name="mds_sunset_primary">@color/mds_palette_sunset_300</color>
+    <color name="mds_sunset_primary_pressed">@color/mds_palette_sunset_400</color>
+    <color name="mds_sunset_on_primary">@color/mds_palette_neutral_950</color>
+    <color name="mds_sunset_primary_container">@color/mds_palette_sunset_900</color>
+    <color name="mds_sunset_on_primary_container">@color/mds_palette_sunset_100</color>
+</resources>

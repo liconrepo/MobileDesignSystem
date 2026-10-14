@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Typography scale. Roles, not sizes: pick Headline, not "24sp bold".
+  System font families keep the library tiny and respect user font settings.
+-->
+<resources>
+    <style name="Mds.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/mdsColorOnSurface</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Mds.TextAppearance.Display">
+        <item name="android:textSize">36sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+    <style name="Mds.TextAppearance.Headline">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+    <style name="Mds.TextAppearance.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Mds.TextAppearance.TitleSmall">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Mds.TextAppearance.Body">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+    <style name="Mds.TextAppearance.BodySmall">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/mdsColorOnSurfaceMuted</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+    <style name="Mds.TextAppearance.Label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Mds.TextAppearance.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/mdsColorOnSurfaceMuted</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    <style name="Mds.TextAppearance.Overline">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?attr/mdsColorPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+</resources>

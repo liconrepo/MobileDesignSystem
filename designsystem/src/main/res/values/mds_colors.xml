@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tier 2 - SEMANTIC tokens (light).
+  Named for the job they do, not how they look. Themes map these to attributes.
+-->
+<resources>
+    <color name="mds_color_background">@color/mds_palette_neutral_50</color>
+    <color name="mds_color_surface">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_surface_variant">@color/mds_palette_neutral_100</color>
+    <color name="mds_color_on_surface">@color/mds_palette_neutral_900</color>
+    <color name="mds_color_on_surface_variant">@color/mds_palette_neutral_700</color>
+    <color name="mds_color_on_surface_muted">@color/mds_palette_neutral_600</color>
+    <color name="mds_color_on_surface_disabled">@color/mds_palette_neutral_400</color>
+    <color name="mds_color_outline">@color/mds_palette_neutral_200</color>
+    <color name="mds_color_outline_strong">@color/mds_palette_neutral_500</color>
+    <color name="mds_color_primary">@color/mds_palette_ocean_600</color>
+    <color name="mds_color_primary_pressed">@color/mds_palette_ocean_700</color>
+    <color name="mds_color_on_primary">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_primary_container">@color/mds_palette_ocean_100</color>
+    <color name="mds_color_on_primary_container">@color/mds_palette_ocean_800</color>
+    <color name="mds_color_danger">@color/mds_palette_danger_600</color>
+    <color name="mds_color_on_danger">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_danger_container">@color/mds_palette_danger_100</color>
+    <color name="mds_color_on_danger_container">@color/mds_palette_danger_700</color>
+    <color name="mds_color_success">@color/mds_palette_success_600</color>
+    <color name="mds_color_on_success">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_success_container">@color/mds_palette_success_100</color>
+    <color name="mds_color_on_success_container">@color/mds_palette_success_700</color>
+    <color name="mds_color_warning">@color/mds_palette_warning_600</color>
+    <color name="mds_color_on_warning">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_warning_container">@color/mds_palette_warning_100</color>
+    <color name="mds_color_on_warning_container">@color/mds_palette_warning_700</color>
+    <color name="mds_color_info">@color/mds_palette_info_600</color>
+    <color name="mds_color_on_info">@color/mds_palette_neutral_0</color>
+    <color name="mds_color_info_container">@color/mds_palette_info_100</color>
+    <color name="mds_color_on_info_container">@color/mds_palette_info_700</color>
+</resources>

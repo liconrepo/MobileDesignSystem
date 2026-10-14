@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Semantic colour attributes (Tier 3: what components read) ===== -->
+    <attr name="mdsColorBackground" format="color" />
+    <attr name="mdsColorSurface" format="color" />
+    <attr name="mdsColorSurfaceVariant" format="color" />
+    <attr name="mdsColorOnSurface" format="color" />
+    <attr name="mdsColorOnSurfaceVariant" format="color" />
+    <attr name="mdsColorOnSurfaceMuted" format="color" />
+    <attr name="mdsColorOnSurfaceDisabled" format="color" />
+    <attr name="mdsColorOutline" format="color" />
+    <attr name="mdsColorOutlineStrong" format="color" />
+
+    <attr name="mdsColorPrimary" format="color" />
+    <attr name="mdsColorPrimaryPressed" format="color" />
+    <attr name="mdsColorOnPrimary" format="color" />
+    <attr name="mdsColorPrimaryContainer" format="color" />
+    <attr name="mdsColorOnPrimaryContainer" format="color" />
+
+    <attr name="mdsColorDanger" format="color" />
+    <attr name="mdsColorOnDanger" format="color" />
+    <attr name="mdsColorDangerContainer" format="color" />
+    <attr name="mdsColorOnDangerContainer" format="color" />
+
+    <attr name="mdsColorSuccess" format="color" />
+    <attr name="mdsColorOnSuccess" format="color" />
+    <attr name="mdsColorSuccessContainer" format="color" />
+    <attr name="mdsColorOnSuccessContainer" format="color" />
+
+    <attr name="mdsColorWarning" format="color" />
+    <attr name="mdsColorOnWarning" format="color" />
+    <attr name="mdsColorWarningContainer" format="color" />
+    <attr name="mdsColorOnWarningContainer" format="color" />
+
+    <attr name="mdsColorInfo" format="color" />
+    <attr name="mdsColorOnInfo" format="color" />
+    <attr name="mdsColorInfoContainer" format="color" />
+    <attr name="mdsColorOnInfoContainer" format="color" />
+
+    <!-- ===== Component default-style hooks: a theme can restyle a component globally ===== -->
+    <attr name="mdsButtonStyle" format="reference" />
+    <attr name="mdsTextFieldStyle" format="reference" />
+    <attr name="mdsCardStyle" format="reference" />
+    <attr name="mdsBadgeStyle" format="reference" />
+    <attr name="mdsChipStyle" format="reference" />
+    <attr name="mdsAvatarStyle" format="reference" />
+    <attr name="mdsAlertStyle" format="reference" />
+    <attr name="mdsListItemStyle" format="reference" />
+    <attr name="mdsSkeletonStyle" format="reference" />
+
+    <!-- Shared tone enum: keep values in sync with MdsTone. -->
+    <attr name="mdsTone" format="enum">
+        <enum name="neutral" value="0" />
+        <enum name="brand" value="1" />
+        <enum name="info" value="2" />
+        <enum name="success" value="3" />
+        <enum name="warning" value="4" />
+        <enum name="danger" value="5" />
+    </attr>
+
+    <declare-styleable name="MdsButton">
+        <attr name="mdsButtonVariant" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="outline" value="2" />
+            <enum name="ghost" value="3" />
+            <enum name="destructive" value="4" />
+        </attr>
+        <attr name="mdsButtonSize" format="enum">
+            <enum name="small" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="large" value="2" />
+        </attr>
+        <attr name="mdsButtonLoading" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsTextField">
+        <attr name="mdsLabel" format="string" />
+        <attr name="mdsHelperText" format="string" />
+        <attr name="mdsErrorText" format="string" />
+        <attr name="android:hint" />
+        <attr name="android:text" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+        <attr name="android:enabled" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsCard">
+        <attr name="mdsCardVariant" format="enum">
+            <enum name="flat" value="0" />
+            <enum name="outlined" value="1" />
+            <enum name="elevated" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MdsBadge">
+        <attr name="mdsTone" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsChip" />
+
+    <declare-styleable name="MdsAvatar">
+        <attr name="mdsAvatarSize" format="enum">
+            <enum name="small" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="large" value="2" />
+            <enum name="xlarge" value="3" />
+        </attr>
+        <attr name="mdsAvatarName" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsAlert">
+        <attr name="mdsTone" />
+        <attr name="mdsAlertTitle" format="string" />
+        <attr name="mdsAlertMessage" format="string" />
+        <attr name="mdsAlertDismissible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsListItem">
+        <attr name="mdsListItemTitle" format="string" />
+        <attr name="mdsListItemSubtitle" format="string" />
+        <attr name="mdsListItemIcon" format="reference" />
+        <attr name="mdsListItemShowChevron" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MdsSkeleton">
+        <attr name="mdsSkeletonCircle" format="boolean" />
+    </declare-styleable>
+</resources>

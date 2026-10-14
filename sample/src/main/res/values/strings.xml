@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MDS Gallery</string>
+    <string name="saving">Saving…</string>
+    <string name="saved_once_more">Saved. Tap to try again</string>
+    <string name="error_email_empty">Enter your email address.</string>
+    <string name="error_email_invalid">That does not look like an email address.</string>
+    <string name="load_content">Load content</string>
+    <string name="show_skeleton">Show skeleton</string>
+</resources>

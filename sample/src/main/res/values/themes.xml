@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The only line an app needs to adopt the design system. -->
+    <style name="Theme.Sample" parent="Theme.Mds" />
+
+    <style name="Sample.Section" parent="Mds.TextAppearance.Headline">
+        <item name="android:textSize">22sp</item>
+    </style>
+</resources>

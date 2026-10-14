@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tier 1 - PRIMITIVE tokens.
+  Raw values with no meaning attached. Components and themes never reference these directly;
+  they go through the semantic tokens in mds_colors.xml. Swapping a brand means re-pointing
+  semantics, not editing components.
+-->
+<resources>
+    <!-- Neutral -->
+    <color name="mds_palette_neutral_0">#FFFFFF</color>
+    <color name="mds_palette_neutral_50">#F7F8FA</color>
+    <color name="mds_palette_neutral_100">#EEF0F4</color>
+    <color name="mds_palette_neutral_200">#E1E4EA</color>
+    <color name="mds_palette_neutral_300">#CBD0D9</color>
+    <color name="mds_palette_neutral_400">#9AA1AF</color>
+    <color name="mds_palette_neutral_500">#707889</color>
+    <color name="mds_palette_neutral_600">#545B6B</color>
+    <color name="mds_palette_neutral_700">#3C4251</color>
+    <color name="mds_palette_neutral_800">#262A36</color>
+    <color name="mds_palette_neutral_900">#171A23</color>
+    <color name="mds_palette_neutral_950">#0E1017</color>
+
+    <!-- Brand: Ocean (default) -->
+    <color name="mds_palette_ocean_100">#DFE3FF</color>
+    <color name="mds_palette_ocean_200">#C2C9FF</color>
+    <color name="mds_palette_ocean_300">#9DA8FF</color>
+    <color name="mds_palette_ocean_400">#7783FB</color>
+    <color name="mds_palette_ocean_600">#4040D8</color>
+    <color name="mds_palette_ocean_700">#3330B0</color>
+    <color name="mds_palette_ocean_800">#272688</color>
+    <color name="mds_palette_ocean_900">#1C1B60</color>
+
+    <!-- Brand: Sunset (alternate, used to prove brands are swappable) -->
+    <color name="mds_palette_sunset_100">#FFE3D8</color>
+    <color name="mds_palette_sunset_300">#FF9C7A</color>
+    <color name="mds_palette_sunset_400">#FFB79C</color>
+    <color name="mds_palette_sunset_600">#B8401D</color>
+    <color name="mds_palette_sunset_700">#93310F</color>
+    <color name="mds_palette_sunset_900">#5E1D07</color>
+
+    <!-- Status: danger -->
+    <color name="mds_palette_danger_100">#FDE0E0</color>
+    <color name="mds_palette_danger_300">#F28B8B</color>
+    <color name="mds_palette_danger_600">#C42B2B</color>
+    <color name="mds_palette_danger_700">#9C1F1F</color>
+    <color name="mds_palette_danger_900">#4A1515</color>
+
+    <!-- Status: success -->
+    <color name="mds_palette_success_100">#D9F5E6</color>
+    <color name="mds_palette_success_300">#6FD6A0</color>
+    <color name="mds_palette_success_600">#12824F</color>
+    <color name="mds_palette_success_700">#0C6139</color>
+    <color name="mds_palette_success_900">#0B3B25</color>
+
+    <!-- Status: warning -->
+    <color name="mds_palette_warning_100">#FFF1D1</color>
+    <color name="mds_palette_warning_300">#F5C75B</color>
+    <color name="mds_palette_warning_600">#9A5B00</color>
+    <color name="mds_palette_warning_700">#6E4100</color>
+    <color name="mds_palette_warning_900">#3D2600</color>
+
+    <!-- Status: info -->
+    <color name="mds_palette_info_100">#D8ECFF</color>
+    <color name="mds_palette_info_300">#7DB9F2</color>
+    <color name="mds_palette_info_600">#1B6FC4</color>
+    <color name="mds_palette_info_700">#17589C</color>
+    <color name="mds_palette_info_900">#0F2E52</color>
+</resources>
