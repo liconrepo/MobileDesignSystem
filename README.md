@@ -29,23 +29,25 @@ Most design-system write-ups show finished UI and hide the decisions. This repo 
 | Module | What it is |
 | --- | --- |
 | [`designsystem`](designsystem) | The library: tokens (`res/values`), themes, and components (`MdsButton`, `MdsTextField`, ...). |
-| [`sample`](sample) | A gallery app that uses the library exactly the way a consumer would. |
-| [`docs`](docs) | Principles, token reference, theming guide, component guidelines, contributor checklist. Also published as a [website](https://liconrepo.github.io/MobileDesignSystem/). |
+| [`sample`](sample) | A gallery app that uses the library exactly the way a consumer would, with one tab per layer. |
+| [`docs`](docs) | Layers, principles, token reference, theming guide, component guidelines, contributor checklist. Also published as a [website](https://liconrepo.github.io/MobileDesignSystem/). |
 
 ### Components
 
-| Component | Purpose |
-| --- | --- |
-| `MdsButton` | Five variants (primary, secondary, outline, ghost, destructive), three sizes, loading state |
-| `MdsTextField` | Always-visible label, helper text, error text with icon, saved state |
-| `MdsCard` | Flat, outlined or elevated container with a rounded ripple |
-| `MdsBadge` | Status label in six tones |
-| `MdsChip` | Toggleable choice with a check mark when selected |
-| `MdsAvatar` | Image or stable-colour initials, four sizes |
-| `MdsAlert` | Inline message, tone icon, optional dismiss, polite live region |
-| `MdsListItem` | Leading icon, title, subtitle, chevron |
-| `MdsSkeleton` | Loading placeholder with shimmer that respects "remove animations" |
-| Switch (style) | `Mds.Widget.Switch` applied automatically by the theme |
+| Layer | Component | Purpose |
+| --- | --- | --- |
+| Perceptual | `MdsTone`, `MdsMotion` | Shared tone vocabulary (six tones) and a single reduced-motion check |
+| Atom | `MdsButton` | Five variants (primary, secondary, outline, ghost, destructive), three sizes, loading state |
+| Atom | `MdsBadge` | Status label in six tones |
+| Atom | `MdsChip` | Toggleable choice with a check mark when selected |
+| Atom | `MdsAvatar` | Image or stable-colour initials, four sizes |
+| Atom | `MdsSkeleton` | Loading placeholder with shimmer that respects "remove animations" |
+| Atom | Switch (style) | `Mds.Widget.Switch` applied automatically by the theme |
+| Molecule | `MdsTextField` | Always-visible label, helper text, error text with icon, saved state |
+| Molecule | `MdsAlert` | Inline message, tone icon, optional dismiss, polite live region |
+| Molecule | `MdsListItem` | Leading icon, title, subtitle, chevron |
+| Organism | `MdsCard` | Flat, outlined or elevated container with a rounded ripple |
+| Template | `MdsScreenTemplate` | Header, scrolling content and pinned footer, with no content of its own |
 
 ## Using it
 
@@ -75,6 +77,10 @@ Use the components in layouts (see the [package map](#package-map) for where eac
 Or in code:
 
 ```kotlin
+import io.github.liconrepo.mds.R
+import io.github.liconrepo.mds.functional.atoms.MdsButton
+import io.github.liconrepo.mds.perceptual.mdsColor
+
 button.variant = MdsButton.Variant.Destructive
 button.isLoading = true
 field.errorText = "Enter a valid email."   // null clears it
@@ -163,7 +169,7 @@ The structure borrows *ideas* (never code or assets) from public design systems 
 - [GitHub Primer](https://primer.style)
 - [Atlassian Design System](https://atlassian.design)
 - [Microsoft Fluent](https://fluent2.microsoft.design)
-- Airbnb's public design-language writing, such as [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
+- Airbnb's public design-language writing, such as Karri Saarinen's [Design Language System](https://karrisaarinen.com/dls/)
 - Brad Frost's [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/), the source of the atoms,
   molecules and organisms layering (see also the [book](https://atomicdesign.bradfrost.com))
 - Alla Kholmatova's book [*Design Systems*](https://www.smashingmagazine.com/design-systems-book/)
