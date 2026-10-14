@@ -7,6 +7,7 @@
 - `MdsScreenTemplate` in a new `templates` package. Children go into its content region; mark one with
   `app:layout_mdsTemplateSlot="footer"` to pin it.
 - Sample pages (`SignInPage`, `ProfilePage`) built on the template.
+- Fixed `MdsScreenTemplate` collapsing its content region to zero height (the weighted scroll area lost its weight).
 - Gallery sample is now tabbed, one tab per layer, with new tone, motion, chip, skeleton and organism examples.
 
 ## 0.1.0

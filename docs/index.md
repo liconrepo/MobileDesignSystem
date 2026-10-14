@@ -11,10 +11,10 @@ nav_order: 0
   <a class="btn primary" href="{{ '/layers.html' | relative_url }}">Explore the layers</a>
   <a class="btn outline" href="{{ site.repository_url }}">View on GitHub</a>
   <div class="shots">
-    <img src="{{ '/images/light-1.png' | relative_url }}" alt="Gallery app in the light theme" loading="lazy">
-    <img src="{{ '/images/dark-1.png' | relative_url }}" alt="Gallery app in the dark theme" loading="lazy">
-    <img src="{{ '/images/sunset-1.png' | relative_url }}" alt="Gallery app with the Sunset brand" loading="lazy">
-    <img src="{{ '/images/light-2.png' | relative_url }}" alt="Components in the gallery app" loading="lazy">
+    <img src="{{ '/images/light-1.png' | relative_url }}" alt="Atoms tab: buttons, light theme" loading="lazy">
+    <img src="{{ '/images/dark-1.png' | relative_url }}" alt="Molecules tab: text fields and alerts, dark theme" loading="lazy">
+    <img src="{{ '/images/sunset-1.png' | relative_url }}" alt="Organisms tab with the Sunset brand" loading="lazy">
+    <img src="{{ '/images/light-2.png' | relative_url }}" alt="Sign-in page built on MdsScreenTemplate" loading="lazy">
   </div>
 </section>
 

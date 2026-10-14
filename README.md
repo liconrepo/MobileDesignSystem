@@ -7,10 +7,10 @@ components so that a brand change, a dark mode and an accessibility fix are each
 **Docs and guides: https://liconrepo.github.io/MobileDesignSystem/**
 
 <p align="center">
-  <img src="docs/images/light-1.png" width="23%" alt="Light theme" />
-  <img src="docs/images/dark-1.png" width="23%" alt="Dark theme" />
-  <img src="docs/images/sunset-1.png" width="23%" alt="Sunset brand" />
-  <img src="docs/images/light-2.png" width="23%" alt="Components" />
+  <img src="docs/images/light-1.png" width="23%" alt="Atoms tab: buttons, light theme" />
+  <img src="docs/images/dark-1.png" width="23%" alt="Molecules tab: text fields and alerts, dark theme" />
+  <img src="docs/images/sunset-1.png" width="23%" alt="Organisms tab with the Sunset brand" />
+  <img src="docs/images/light-2.png" width="23%" alt="Sign-in page built on MdsScreenTemplate" />
 </p>
 
 ## Why this exists

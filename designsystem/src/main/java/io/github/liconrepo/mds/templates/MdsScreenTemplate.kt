@@ -134,10 +134,17 @@ public class MdsScreenTemplate @JvmOverloads constructor(
 
         public constructor(width: Int, height: Int) : super(width, height)
         public constructor(source: ViewGroup.LayoutParams) : super(source)
+        public constructor(source: MarginLayoutParams) : super(source)
+        // The LinearLayout overload is the only one that keeps weight and gravity.
+        public constructor(source: LinearLayout.LayoutParams) : super(source)
     }
 
     override fun generateLayoutParams(attrs: AttributeSet?): LayoutParams = SlotLayoutParams(context, attrs)
     override fun generateDefaultLayoutParams(): LayoutParams = SlotLayoutParams(MATCH_PARENT, WRAP_CONTENT)
-    override fun generateLayoutParams(p: ViewGroup.LayoutParams): LayoutParams = SlotLayoutParams(p)
+    override fun generateLayoutParams(p: ViewGroup.LayoutParams): LayoutParams = when (p) {
+        is LinearLayout.LayoutParams -> SlotLayoutParams(p)
+        is MarginLayoutParams -> SlotLayoutParams(p)
+        else -> SlotLayoutParams(p)
+    }
     override fun checkLayoutParams(p: ViewGroup.LayoutParams?): Boolean = p is SlotLayoutParams
 }
